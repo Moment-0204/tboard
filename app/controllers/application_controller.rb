@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
   def sub
   end
 
+  def sub1
+  end
+
 end
