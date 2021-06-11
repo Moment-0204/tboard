@@ -1,3 +1,5 @@
+$visitTime=0
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -10,7 +12,14 @@ class ApplicationController < ActionController::Base
   def sub
   end
 
+  def reset
+    $visitTime=0
+    redirect_to "/"
+  end
+
   def sub1
+    $visitTime += 1
+    p $visitTime
   end
 
 end

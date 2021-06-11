@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'application#index'
   get 'subpage', to: 'application#sub'
   get 'subpage_2', to:'application#sub1'
+  get 'reset', to:'application#reset'
 
 end
