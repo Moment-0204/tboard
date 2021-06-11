@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get 'reset', to:'application#reset'
 
   get 'review/show', to:'reviews#show'
+  get 'review/new', to:'reviews#new'
+  post 'review/submit', to:'reviews#create'
 
 end

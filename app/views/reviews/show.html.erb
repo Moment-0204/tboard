@@ -1,6 +1,11 @@
 <h1>showing all reviews here</h1>
 <% @reviews.each do |r| %>
-  <h2><%= r.title %></h2>
+  <% if r.innerid%10==0 then %>
+  <h2><%=r.title %></h2>
+  <% else %>
+  <h3><%= r.title %></h3>
   <p><%= r.content %></p>
+  <% end %>
 <% end %>
+<a href="new">投稿はこちらから</a><br>
 <a href="/">トップページに戻る</a>

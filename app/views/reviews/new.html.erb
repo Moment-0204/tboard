@@ -1,0 +1,20 @@
+<h1>新規レビュー投稿</h1>
+<%= form_for @review, url:"/review/submit" do |f| %>
+  <p>
+    <%= f.label :class, "教科" %><br>
+    <%= f.select :class, [["数理科学基礎", "数理科学基礎"], ["物性化学", "物性化学"]], include_blank: "選択して下さい" %>
+  </p>
+  <br>
+  <p>
+    <%= f.label :title, "教員名" %><br>
+    <%= f.text_field :title %>
+  </p>
+  <br>
+  <p>
+    <%= f.label :content, "レビュー" %><br>
+    <%= f.text_area :content %>
+  </p>
+  <br>
+  <%= f.submit "投稿する" %>
+<% end %>
+<a href="/review/show">一覧に戻る</a>
