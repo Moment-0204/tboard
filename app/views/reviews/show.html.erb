@@ -1,0 +1,6 @@
+<h1>showing all reviews here</h1>
+<% @reviews.each do |r| %>
+  <h2><%= r.title %></h2>
+  <p><%= r.content %></p>
+<% end %>
+<a href="/">トップページに戻る</a>

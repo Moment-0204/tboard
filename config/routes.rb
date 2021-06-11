@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'subpage_2', to:'application#sub1'
   get 'reset', to:'application#reset'
 
+  get 'review/show', to:'reviews#show'
+
 end
