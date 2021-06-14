@@ -1,6 +1,6 @@
 <h1>レビュー一覧</h1>
 <% @reviews.each do |r| %>
-  <% if r.innerid%10000==0 then %>
+  <% if r.innerid%10000==0 then %>  <%#科目名の表示はinneridが10000の倍数のとき#%>
   <h2><%=r.title %></h2>
   <% else %>
   <h3><%= r.title %></h3>
