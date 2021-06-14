@@ -1,0 +1,13 @@
+<h1>トップページやで!!<%=@current_user.name%>さん!</h1>
+<p>
+  <a href="subpage">リンクをクリック！！！</a>
+</p>
+<p>
+  <a href="subpage_2">サブページ２はこちら！！</a>
+</p>
+<p>
+  <a href="review/show">レビュー投稿・閲覧はこちら</a>
+</p>
+<p>
+  <%= link_to "ログアウトする", '/logout', method: :delete %>
+</p>
