@@ -1,0 +1,17 @@
+<h1>レビューの削除</h1>
+<%= form_for @delete_review, url:"/review/submit_delete" do |f| %>
+  <% @reviews.each do |r| %>
+    <% if r.innerid%10000==0 then %>
+      <h2><%= r.title %></h2>
+    <% else %>
+      <h3><%= r.title %></h3>
+      <p>
+        <%= f.radio_button :id, r.id %>
+        <%= f.label :id, r.content, value: r.id %>
+      </p>
+    <% end %>
+  <% end %>
+  <br>
+  <%= f.submit "削除する" %>
+<% end %>
+<a href="/review/show">一覧に戻る</a>

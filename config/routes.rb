@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get 'review/show', to:'reviews#show'
   get 'review/new', to:'reviews#new'
   post 'review/submit', to:'reviews#create'
+  get 'review/delete', to:'reviews#delete'
+  post 'review/submit_delete', to:'reviews#exc_delete'
 
 end
