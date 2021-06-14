@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   get 'review/delete', to:'reviews#delete'
   post 'review/submit_delete', to:'reviews#exc_delete'
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
+  get '/new_user', to:'users#new'
+  post '/new_user/submit', to:'users#create'
 end

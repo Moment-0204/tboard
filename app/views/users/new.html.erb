@@ -1,0 +1,20 @@
+<h1>新規ユーザー作成</h1>
+<%= form_for @user, url:"/new_user/submit" do |f| %>
+  <p>
+    <%= f.label :name, "ユーザーネーム" %><br>
+    <%= f.text_field :name %>
+  </p>
+  <br>
+  <p>
+    <%= f.label :password, "パスワード" %><br>
+    <%= f.password_field :password %>
+  </p>
+  <br>
+  <p>
+    <%= f.label :password_confirmation, "パスワード確認" %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <br>
+  <%= f.submit "作成する" %>
+<% end %>
+<a href="/">トップページに戻る</a>
