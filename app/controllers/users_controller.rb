@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(name:params[:user][:name],password:params[:user][:password],password_confirmation:params[:user][:password_confirmation],mod:0)
+    @user = User.new(name:params[:user][:name],password:params[:user][:password],password_confirmation:params[:user][:password_confirmation],mod:1)
+    # flashの使い方わからん
     if @user.save
       flash[:success] = '新しいユーザーを登録しました。'
       redirect_to '/'

@@ -1,3 +1,6 @@
+<% if flash[:success] %>
+  <p><%= flash[:success] %></p>
+<% end %>
 <h1>トップページやで!!<%=@current_user.name%>さん!</h1>
 <p>
   <a href="subpage">リンクをクリック！！！</a>

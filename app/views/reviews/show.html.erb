@@ -8,5 +8,7 @@
   <% end %>
 <% end %>
 <a href="new">投稿はこちらから</a><br>
-<a href="delete">削除</a><br>
+<% if @current_user.mod==0 then %>
+  <a href="delete">削除</a><br>
+<% end %>
 <a href="/">トップページに戻る</a>
