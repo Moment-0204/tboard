@@ -2,7 +2,7 @@
 
 class ReviewsController < ApplicationController
 
-  before_action :logged_in_user, only: %i[show new delete]
+  before_action :logged_in_user, only: %i[show new delete create]
 
   def show
     @reviews = Review.order(:innerid).all
@@ -81,7 +81,7 @@ class ReviewsController < ApplicationController
       end
       # コメントの付いている教員の場合はtitleは空で良い
       params[:review][:title] = '' if makeinnerid % 100 != 0
-      Review.create(title: params[:review][:title], content: params[:review][:content], innerid: makeinnerid)
+      Review.create(title: params[:review][:title], content: params[:review][:content], innerid: makeinnerid, author:@current_user.name)
     end
     redirect_to '/review/show'
   end

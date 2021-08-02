@@ -1,14 +1,26 @@
+<% if flash[:danger] %>
+  <p><%= flash[:danger] %></p>
+<% end %>
 <h1>レビュー一覧</h1>
 <% @reviews.each do |r| %>
   <% if r.innerid%10000==0 then %>  <%#科目名の表示はinneridが10000の倍数のとき#%>
   <h2><%=r.title %></h2>
   <% else %>
   <h3><%= r.title %></h3>
-  <p><%= r.content %></p>
+  <p>
+    <%= r.content %>
+    <% if @current_user.mod==0 then %>
+      <br>
+      by <%=r.author %>
+    <% end %>
+  </p>
   <% end %>
 <% end %>
 <a href="new">投稿はこちらから</a><br>
 <% if @current_user.mod==0 then %>
   <a href="delete">削除</a><br>
+<% end %>
+<% if @current_user.mod==1 then %>
+  <a href="delete">自分のレビューの削除</a><br>
 <% end %>
 <a href="/">トップページに戻る</a>

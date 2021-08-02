@@ -4,11 +4,14 @@
     <% if r.innerid%10000==0 then %>
       <h2><%= r.title %></h2>
     <% else %>
-      <h3><%= r.title %></h3>
-      <p>
-        <%= f.radio_button :id, r.id %>
-        <%= f.label :id, r.content, value: r.id %>
-      </p>
+      <% if @current_user.mod==0 || r.author==@current_user.name then %>
+        <h3><%= r.title %></h3>
+        <p>
+          <%= f.radio_button :id, r.id %>
+          <%= f.label :id, r.content, value: r.id %>
+          by <%= r.author%>
+        </p>
+      <% end %>
     <% end %>
   <% end %>
   <br>
